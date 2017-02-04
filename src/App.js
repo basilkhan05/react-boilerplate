@@ -20,6 +20,7 @@ class App extends Component {
           <li><input type="checkbox"/>Learn JSX </li>
           <li><input type="checkbox"/>Build an Awesome Project </li>
           <li><input type="checkbox"/>Ship It! </li>
+          <li><input type="checkbox"/>Contribute to Open Source! </li>
           
 
         </ul>
