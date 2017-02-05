@@ -3,7 +3,6 @@ import {TodoItem} from './TodoItem.js'
 
 
 export const TodoList = (props) => {
-console.log(props);
   return(
       <div className="Todo-List">
         <ul>
@@ -13,4 +12,9 @@ console.log(props);
         </div>
     )
 
+}
+
+
+TodoList.propTypes = {
+  todos: React.PropTypes.array.isRequired
 }
