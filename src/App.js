@@ -5,10 +5,7 @@ import {TodoForm, TodoList} from './components/todo'
 import {addTodo, generateId} from './lib/todoHelpers'
 
 class App extends Component {
-
-  constructor(props) {
-    super(props);
-    this.state = {
+    state = {
       todos: [
         {id: 1, name: 'Learn JSX', isComplete: true},
         {id: 2, name: 'Build an Awesome Project', isComplete: false},
@@ -17,13 +14,8 @@ class App extends Component {
       ],
       currentTodo: '',
     }
-    this.handleInputChange = this.handleInputChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleEmptySubmit = this.handleEmptySubmit.bind(this);
 
-  }
-
-  handleSubmit(evt) {
+  handleSubmit = (evt) => {
     evt.preventDefault()
     const newId = generateId()
     const newTodo = {id: newId, name: this.state.currentTodo, isComplete: false}
@@ -48,14 +40,14 @@ class App extends Component {
     // }
   }
 
-  handleEmptySubmit(evt){
+  handleEmptySubmit = (evt) => {
     evt.preventDefault()
     this.setState({
       errorMessage: 'Please supply a todo item'
     })
   }
 
-  handleInputChange (evt) {
+  handleInputChange = (evt) => {
     this.setState({
         currentTodo: evt.target.value,
         errorMessage: ''
